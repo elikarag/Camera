@@ -26,4 +26,8 @@ sq = int(math.sqrt(P))
 
 my2d = myArr.reshape(sq,sq)
 my2d = np.rot90(my2d,3)
-plt.imshow(my2d,'gray')
+my2dBW = my2d.copy()
+my2dBW[my2dBW>0.1] = 1
+my2dBW[my2dBW<=0.1] = 0
+plt.imshow(my2d)
+#plt.imshow(my2dBW,'gray')
